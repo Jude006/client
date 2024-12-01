@@ -11,24 +11,28 @@ const HomeSection2 = () => {
   ];
 
   const containerVariant = {
-    hidden: { opacity: 0, scale: 0.8 },
+    hidden: { opacity: 0, scale: 0.95 },
     visible: {
       opacity: 1,
       scale: 1,
       transition: {
-        duration: 0.8,
+        duration: 0.5, // Faster duration
+        ease: "easeOut", // Smooth easing function
         when: "beforeChildren",
-        staggerChildren: 0.2,
+        staggerChildren: 0.1, // Reduced stagger for quicker sequence
       },
     },
   };
 
   const itemVariant = {
-    hidden: { opacity: 0, y: 50 },
+    hidden: { opacity: 0, y: 30 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.5 },
+      transition: {
+        duration: 0.4, // Shorter duration for a quicker reveal
+        ease: "easeOut", // Smooth easing function
+      },
     },
   };
 
@@ -44,7 +48,7 @@ const HomeSection2 = () => {
         {stats.map((stat, index) => (
           <motion.div
             key={index}
-            className={`flex flex-col items-center justify-center py-2 px-1 border ${stat.borderColor} border-dashed rounded-xl  transform hover:scale-105 transition-all duration-300`}
+            className={`flex flex-col items-center justify-center py-2 px-1 border ${stat.borderColor} border-dashed rounded-xl transform hover:scale-105 transition-all duration-300`}
             variants={itemVariant}
           >
             <div className="mb-4">{stat.icon}</div>
