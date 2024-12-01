@@ -16,10 +16,10 @@ const HomeSection2 = () => {
       opacity: 1,
       scale: 1,
       transition: {
-        duration: 0.5, // Faster duration
-        ease: "easeOut", // Smooth easing function
+        duration: 0.5,
+        ease: "easeOut",
         when: "beforeChildren",
-        staggerChildren: 0.1, // Reduced stagger for quicker sequence
+        staggerChildren: 0.1, 
       },
     },
   };
@@ -30,14 +30,14 @@ const HomeSection2 = () => {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.4, // Shorter duration for a quicker reveal
-        ease: "easeOut", // Smooth easing function
+        duration: 0.4,
+        ease: "easeOut", 
       },
     },
   };
 
   return (
-    <section className="md:py-8 py-4 gap-20 items-center md:px-6 px-12 lg:px-28 font-poppins">
+    <section className="md:pt-8 md:pb-8 pt-4 pb-20 gap-20 items-center md:px-6 px-12 lg:px-28 font-poppins">
       <motion.div
         className="container mx-auto grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 md:gap-20 gap-8"
         variants={containerVariant}

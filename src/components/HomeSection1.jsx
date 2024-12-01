@@ -8,7 +8,7 @@ import img3 from '../assets/images/img3.jpg'
 
 const HomeSection1 = () => {
   return (
-    <section className="md:mt-[300px] mt-[900px] mb-[50px] font-open w-full grid md:grid-cols-2 grid-cols-1 gap-10 items-center md:px-6 px-2 lg:px-28 py-20">
+    <section className="md:mt-[300px] mt-[900px] mb-[50px] font-open w-full grid md:grid-cols-2 grid-cols-1 gap-10 items-center md:px-6 px-2 lg:px-28 md:pt-20 md:pb-20 pb-6 pt-16">
       <div className="py-2 px-1 flex flex-col gap-6">
         <img src={pencil} alt="" className="max-w-[80px] object-contain" />
         <h1 className="md:text-5xl font-semibold text-3xl font-poppins leading-normal">
