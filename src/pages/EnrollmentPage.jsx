@@ -31,11 +31,11 @@ const EnrollmentPage = () => {
     <main>
       <section
         style={{ backgroundImage: `url(${enrol})` }}
-        className="relative bg-blue-600 text-accent py-16 md:py-32"
+        className="relative bg-blue-600 text-accent py-28 md:py-32 md:min-h-fit mih-h-[70vh]"
       >
         <div className="container mx-auto px-6 lg:px-20 text-center">
           <motion.h1
-            className="text-3xl md:text-5xl font-bold font-poppins mb-6"
+            className="text-2xl md:mt-0 mt-3 md:text-5xl font-bold font-poppins md:mb-6 mb-3"
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
