@@ -1,4 +1,3 @@
-// src/App.jsx
 import React from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Home from './pages/Home';
@@ -13,42 +12,23 @@ import Moderator from './pages/Moderator';
 const App = () => {
   const router = createBrowserRouter([
     {
-      path: '/', 
-      element: <RootLayout />,
+      path: '/',
+      element: <RootLayout />, 
       children: [
-        {
-          index: true, 
-          element: <Home />,
-        },
-        {
-          path: '/about',
-          element: <About />,
-        },
-        {
-          path: '/gallery',
-          element: <Gallery />,
-        },
-        {
-          path: '/contact',
-          element: <Contact />,
-        },
-        {
-          path: '/portal',
-          element: <SchoolPortal />,
-        },
-        {
-          path: '/signIn',
-          element: <Moderator />,
-        },
-        {
-          path: '/enrol',
-          element: <EnrollmentPage />,
-        },
+        { index: true, element: <Home /> },
+        { path: '/about', element: <About /> },
+        { path: '/gallery', element: <Gallery /> },
+        { path: '/contact', element: <Contact /> },
+        { path: '/portal', element: <SchoolPortal /> },
+        { path: '/signIn', element: <Moderator /> },
+        { path: '/enrol', element: <EnrollmentPage /> },
       ],
     },
   ]);
 
-  return <RouterProvider router={router} />;
+  return (
+    <RouterProvider router={router} />
+  );
 };
 
 export default App;

@@ -1,11 +1,17 @@
-import React from "react";
-import { Outlet, useLocation } from "react-router-dom";
-import Header from "../components/Header";
-import Navbar from "../components/Navbar";
+import React, { useEffect } from 'react';
+import { Outlet, useLocation } from 'react-router-dom';
+import Header from '../components/Header';
+import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
 const RootLayout = () => {
   const location = useLocation();
+
+
+  useEffect(() => {
+    window.scrollTo(0, 0); 
+  }, [location.pathname]);
+
   const noNavbarRoutes = ['/signIn', '/portal'];
   const showNavbar = !noNavbarRoutes.includes(location.pathname);
 
@@ -13,7 +19,9 @@ const RootLayout = () => {
     <div className="relative">
       <Header />
       {showNavbar && <Navbar />}
-      <Outlet />
+      <main>
+        <Outlet />
+      </main>
       <Footer />
     </div>
   );

@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Button from "../components/Button";
-import enrol from '../assets/images/enrol.jpg'
+import enrol from '../assets/images/enrol.jpg';
+
 const EnrollmentPage = () => {
   const [selectedClass, setSelectedClass] = useState("");
   const [tuition, setTuition] = useState("");
@@ -19,9 +20,19 @@ const EnrollmentPage = () => {
     setTuition(selected.tuition);
   };
 
+  const scrollToForm = () => {
+    const formSection = document.getElementById("enrollment-form");
+    if (formSection) {
+      formSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <main>
-      <section style={{backgroundImage: `url(${enrol})`}} className="relative bg-blue-600 text-accent py-16 md:py-32">
+      <section
+        style={{ backgroundImage: `url(${enrol})` }}
+        className="relative bg-blue-600 text-accent py-16 md:py-32"
+      >
         <div className="container mx-auto px-6 lg:px-20 text-center">
           <motion.h1
             className="text-3xl md:text-5xl font-bold font-poppins mb-6"
@@ -40,22 +51,21 @@ const EnrollmentPage = () => {
             Join our community of bright minds and future leaders. Let’s make
             the enrollment process smooth and exciting for you!
           </motion.p>
-          <motion.a
-            href="#enrollment-form"
+          <motion.button
+            onClick={scrollToForm}
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.5 }}
           >
             <Button
-              text="Start EnrollMent"
+              text="Start Enrollment"
               bgColor="bg-secondary"
               textColor="text-primary"
             />
-          </motion.a>
+          </motion.button>
         </div>
       </section>
 
-      {/* Enrollment Steps */}
       <section className="py-16 bg-accent">
         <div className="container mx-auto px-6 lg:px-20">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 font-poppins">
@@ -102,14 +112,12 @@ const EnrollmentPage = () => {
         </div>
       </section>
 
-      {/* Enrollment Form */}
       <section id="enrollment-form" className="py-16 bg-white">
         <div className="container mx-auto px-6 lg:px-20">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 font-poppins">
             Enrollment Form
           </h2>
           <form className="max-w-2xl mx-auto bg-gray-50 p-8 shadow-lg rounded-lg font-open">
-            {/* Class Selection */}
             <div className="mb-6">
               <label
                 htmlFor="class"
@@ -132,7 +140,6 @@ const EnrollmentPage = () => {
               </select>
             </div>
 
-            {/* Tuition Display */}
             {selectedClass && (
               <motion.div
                 className="mb-6 p-4 bg-blue-100 border-l-4 border-blue-500 rounded"
@@ -146,7 +153,6 @@ const EnrollmentPage = () => {
               </motion.div>
             )}
 
-            {/* Student Name */}
             <div className="mb-6">
               <label
                 htmlFor="student-name"
@@ -163,7 +169,6 @@ const EnrollmentPage = () => {
               />
             </div>
 
-            {/* Parent Details */}
             <div className="mb-6">
               <label
                 htmlFor="parent-name"
@@ -195,10 +200,9 @@ const EnrollmentPage = () => {
               />
             </div>
 
-            {/* Submit Button */}
             <div className="text-center">
               <motion.div whileHover={{ scale: 1.05 }}>
-                <Button text='Submit' bgColor='bg-secondary' />
+                <Button text="Submit" bgColor="bg-secondary" />
               </motion.div>
             </div>
           </form>
