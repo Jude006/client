@@ -32,7 +32,7 @@ const Navbar = () => {
       className={`w-full z-50 py-1 transition-transform duration-300 ease-linear  font-poppins  ${
         sticky
           ? 'sticky top-0 bg-black  backdrop-blur-md text-accent shadow-md z-50'
-          : 'bg-transparent text-accent absolute border-b border-gray-500'
+          : 'bg-transparent text-accent absolute md:border-b border-gray-500'
       }`}
     >
       <nav className="py-1">
@@ -93,7 +93,7 @@ const Navbar = () => {
                         }`}
                       >
                         <Link
-                          className="hover:text-secondary duration-300 ease-linear under"
+                          className="hover:text-secondary duration-300 ease-linear under text-nowrap"
                           to="/portal"
                         >
                           School Portal
@@ -107,7 +107,7 @@ const Navbar = () => {
                         }`}
                       >
                         <Link
-                          className="hover:text-secondary duration-300 ease-linear under"
+                          className="hover:text-secondary duration-300 ease-linear under text-nowrap"
                           to="/signIn"
                         >
                           Moderator
@@ -131,7 +131,7 @@ const Navbar = () => {
 
      
         {showNav && (
-          <div className="lg:hidden flex border-t border-accent bg-primary bg-opacity-25 backdrop-blur-md">
+          <div className="lg:hidden flex border-t border-accent bg-black backdrop-blur-md">
             <ul className="gap-[35px] font-poppins flex flex-col px-4 py-4">
               <li onClick={()=>setShowNav(false)}
                 className={`${
